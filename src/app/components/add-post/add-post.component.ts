@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'add-post',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-post.component.sass']
 })
 export class AddPostComponent {
-  
+  @ViewChild("postTextarea") postTextarea: ElementRef;
+
+  ngAfterViewInit() {
+    this.postTextarea.nativeElement.focus();
+  }
 }

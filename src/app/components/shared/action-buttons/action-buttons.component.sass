@@ -1,4 +1,4 @@
-div
+div.card
   background-color: var(--white)
   border-radius: 5px
   padding: 1.5rem
@@ -23,7 +23,19 @@ a
     border-radius: 50%
     transition: .3s
     margin-right: .5rem
+    padding: .5rem
+    width: 2rem
+    height: 2rem
+    display: flex
+    justify-content: center
+    align-items: center
+  .pi
+    color: var(--white)
   &:hover
-    color: var(--blue)
+    p
+      color: var(--blue)
+      font-weight: bold
     div
       background-color: var(--light-blue)
+    .pi
+      color: var(--black)

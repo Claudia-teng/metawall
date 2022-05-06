@@ -2,20 +2,16 @@
   <div class="post-area">
     <div class="search-bar">
       <!-- dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Order
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Latest</a></li>
-          <li><a class="dropdown-item" href="#">Oldest</a></li>
-          <li><a class="dropdown-item" href="#">Popular</a></li>
-        </ul>
-      </div>
+      <p-dropdown [options]="orderTypes" 
+                  [(ngModel)]="selectOrder"
+                  optionLabel="label">
+      </p-dropdown>
       <!-- input -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2"></button>
+        <button>
+          <i class="pi pi-search"></i>
+        </button>
       </div>
     </div>
     <div>

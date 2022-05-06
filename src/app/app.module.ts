@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// PrimeNG
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
 
 // Components
 import { AddPostComponent } from './components/add-post/add-post.component';
@@ -10,6 +15,7 @@ import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { ActionButtonsComponent } from './components/shared/action-buttons/action-buttons.component';
 import { PostComponent } from './components/shared/post/post.component';
 import { TopbarComponent } from './components/shared/topbar/topbar.component';
+import { FormsModule } from '@angular/forms';
 
 
 const FEATURE_COMPONENT = [
@@ -23,6 +29,11 @@ const SHARED_COMPONENT = [
   ActionButtonsComponent
 ]
 
+const PRIME_NG = [
+  DropdownModule,
+  ButtonModule
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +42,10 @@ const SHARED_COMPONENT = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    ...PRIME_NG
   ],
   providers: [],
   bootstrap: [AppComponent]
