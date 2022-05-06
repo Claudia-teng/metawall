@@ -1,37 +1,27 @@
-<div class="content">
-  <div class="post-area">
-    <div class="search-bar">
-      <!-- dropdown -->
-      <p-dropdown [options]="orderTypes" 
-                  [(ngModel)]="selectOrder"
-                  optionLabel="label">
-      </p-dropdown>
-      <!-- input -->
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button>
-          <i class="pi pi-search"></i>
-        </button>
-      </div>
-    </div>
-    <div>
-      <post></post>
-      <post></post>
-      <post></post>
-      <post></post>
-      <post></post>
-      <post *ngFor="let post of posts">
-      </post>
-      <div *ngIf="posts?.length === 0"
-          class="no-posts">
-        No posts currently. Try to add a new post!
-      </div>
-    </div>
-  </div>
-  <div class="action-buttons-area">
-    <action-buttons></action-buttons>
+<div class="search-bar">
+  <!-- dropdown -->
+  <p-dropdown [options]="orderTypes" 
+              [(ngModel)]="selectOrder"
+              optionLabel="label">
+  </p-dropdown>
+  <!-- input -->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button>
+      <i class="pi pi-search"></i>
+    </button>
   </div>
 </div>
-
-<mobile-action-buttons class="mobile-action-buttons-area">
-</mobile-action-buttons>
+<div>
+  <post></post>
+  <post></post>
+  <post></post>
+  <post></post>
+  <post></post>
+  <post *ngFor="let post of posts">
+  </post>
+  <div *ngIf="posts?.length === 0"
+      class="no-posts">
+    No posts currently. Try to add a new post!
+  </div>
+</div>
