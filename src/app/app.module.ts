@@ -17,11 +17,17 @@ import { ActionButtonsComponent } from './components/shared/action-buttons/actio
 import { PostComponent } from './components/shared/post/post.component';
 import { TopbarComponent } from './components/shared/topbar/topbar.component';
 import { MobileActionButtonsComponent } from './components/shared/mobile-action-buttons/mobile-action-buttons.component';
+import { MainComponent } from './view/main/main.component';
+import { LoginComponent } from './view/login/login.component';
+import { SignupComponent } from './view/signup/signup.component';
 
 
 const FEATURE_COMPONENT = [
+  LoginComponent,
+  SignupComponent,
+  MainComponent,
   NewsFeedComponent,
-  AddPostComponent
+  AddPostComponent,
 ]
 
 const SHARED_COMPONENT = [
