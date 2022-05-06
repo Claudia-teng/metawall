@@ -3,7 +3,7 @@
   margin: 0 auto
   display: flex
   justify-content: space-between
-  padding-top: 3rem
+  padding: 3rem 0rem 1rem 0rem
 .post-area
   width: 65%
   > div.search-bar
@@ -39,9 +39,31 @@
     justify-content: center
 .action-buttons-area
   width: 30%
+.mobile-action-buttons-area
+  display: none
 
 ::ng-deep 
   .p-dropdown, .p-dropdown:not(.p-disabled):hover
     border: none
   .p-dropdown:not(.p-disabled).p-focus
     box-shadow: none
+
+@media only screen and (max-width: 1080px)
+  .action-buttons-area
+    display: none
+  .post-area
+    width: 100%
+  .mobile-action-buttons-area
+    display: unset
+
+@media only screen and (max-width: 414px)
+  .content
+    width: 90%
+  .post-area
+    > div.search-bar
+      display: block
+    .input-group
+      margin-top: .5rem
+      margin-left: 0rem
+  ::ng-deep .p-dropdown
+    width: 100%
