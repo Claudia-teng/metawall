@@ -19,5 +19,5 @@ export class NewsFeedComponent {
   ];
   public selectOrder: SelectItem;
   public posts = [];
-  
+
 }
