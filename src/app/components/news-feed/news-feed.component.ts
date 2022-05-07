@@ -21,6 +21,7 @@ export class NewsFeedComponent {
   ];
   public selectedOrder: SelectItem = this.orderTypes[0];
   public searchInput: string
+  public loading: boolean;
   public posts: Post[];
 
   constructor(private newsFeedService: NewsFeedService ) {}
@@ -30,9 +31,11 @@ export class NewsFeedComponent {
   }
 
   public onSearch(): void {
-    this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
-      this.posts = res;
-    })
+    this.loading = true;
+    // this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
+    //   // this.loading = false;
+    //   this.posts = res;
+    // })
   }
 
 }

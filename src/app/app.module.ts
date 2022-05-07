@@ -21,6 +21,7 @@ import { MobileActionButtonsComponent } from './components/shared/mobile-action-
 import { MainComponent } from './view/main/main.component';
 import { LoginComponent } from './view/login/login.component';
 import { SignupComponent } from './view/signup/signup.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 const FEATURE_COMPONENT = [
@@ -35,7 +36,8 @@ const SHARED_COMPONENT = [
   TopbarComponent,
   PostComponent,
   ActionButtonsComponent,
-  MobileActionButtonsComponent
+  MobileActionButtonsComponent,
+  LoadingComponent
 ]
 
 const PRIME_NG = [

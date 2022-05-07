@@ -17,11 +17,16 @@
   </div>
 </div>
 <div>
-  <post *ngFor="let post of posts"
-        [post]="post">
-  </post>
-  <div *ngIf="posts?.length === 0"
-      class="no-posts">
-    No posts currently. Try to add a new post!
-  </div>
+  <ng-container *ngIf="loading; else showPosts">
+    <loading></loading>
+  </ng-container>
+  <ng-template #showPosts>
+    <!-- <post *ngFor="let post of posts"
+          [post]="post">
+    </post>
+    <div *ngIf="posts?.length === 0"
+          class="no-posts">
+      No posts currently. Try to add a new post!
+    </div> -->
+  </ng-template>
 </div>
