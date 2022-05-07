@@ -35,6 +35,11 @@ export class NewsFeedComponent {
     this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
       this.loading = false;
       this.posts = res;
+      this.posts.map(post => {
+        const postDate: Date = new Date(post.createdAt)
+        post.createdAt = `${postDate.getFullYear()}-${postDate.getMonth()+1}-${postDate.getDate()} 
+                          ${postDate.getHours()}:${postDate.getMinutes()}`
+      })
     })
   }
 

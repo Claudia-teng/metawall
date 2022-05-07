@@ -9,21 +9,17 @@ import { AddPostService } from 'src/app/service';
   styleUrls: ['./add-post.component.sass']
 })
 export class AddPostComponent {
-  @ViewChild("postTextarea") postTextarea: ElementRef;
 
   public content: string;
+  public imageUrl: string;
 
   constructor(private addPostService: AddPostService,
               private router: Router) {}
 
-  ngAfterViewInit() {
-    this.postTextarea.nativeElement.focus();
-  }
-
   public onSubmit(): void {
     const addPost: AddPost = {
       userId: '6275e4baa71de3da4d87ce76',
-      image: null,
+      image: this.imageUrl,
       content: this.content,
     }
     this.addPostService.addPost(addPost).subscribe(res => {

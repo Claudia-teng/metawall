@@ -5,7 +5,7 @@ export interface Post {
   image: string | null,
   content: string,
   tags?: string[],
-  createdAt?: Date,
-  likes?: number,
-  comments?: number
+  createdAt: string,
+  likes: number,
+  comments: number
 }

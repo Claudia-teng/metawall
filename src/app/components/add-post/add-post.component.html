@@ -2,13 +2,14 @@
   Add Post
 </div>
 <div>
-  <textarea #postTextarea 
-            placeholder="What's new?"
+  <textarea placeholder="What's new?"
             [(ngModel)]="content"></textarea>
-  <button class="upload">
+  <!-- To be remove -->
+  Image Url:<input [(ngModel)]="imageUrl"/>
+  <!-- <button class="upload">
     Upload Image
-  </button>
-  <img src="" alt=""/>
+  </button> -->
+  <img [src]="imageUrl" alt=""/>
   <button class="submit"
           (click)="onSubmit()">
     Submit
