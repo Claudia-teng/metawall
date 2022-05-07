@@ -32,10 +32,10 @@ export class NewsFeedComponent {
 
   public onSearch(): void {
     this.loading = true;
-    // this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
-    //   // this.loading = false;
-    //   this.posts = res;
-    // })
+    this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
+      this.loading = false;
+      this.posts = res;
+    })
   }
 
 }
