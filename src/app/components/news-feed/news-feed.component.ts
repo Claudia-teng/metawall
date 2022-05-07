@@ -1,5 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import { Post } from 'src/app/model';
+import { NewsFeedService } from 'src/app/service';
 
 @Component({
   selector: 'news-feed',
@@ -14,10 +16,23 @@ export class NewsFeedComponent {
     },
     {
       label: 'Oldest',
-      value: 'acs'
+      value: 'asc'
     },
   ];
-  public selectOrder: SelectItem;
-  public posts = [];
+  public selectedOrder: SelectItem = this.orderTypes[0];
+  public searchInput: string
+  public posts: Post[];
+
+  constructor(private newsFeedService: NewsFeedService ) {}
+
+  ngOnInit(): void {
+    this.onSearch();
+  }
+
+  public onSearch(): void {
+    this.newsFeedService.getAllPosts(this.selectedOrder.value, this.searchInput).subscribe(res => {
+      this.posts = res;
+    })
+  }
 
 }

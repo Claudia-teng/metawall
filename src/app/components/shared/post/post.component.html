@@ -1,11 +1,11 @@
 <div class="post-bg">
   <div>
-    <img src="" alt=""/>
+    <img [src]="post.userId.photo" alt=""/>
     <div>
-      <h1>阿爾敏</h1>
-      <p>2022/01/10 12:00</p>
+      <h1>{{ post.userId.name }}</h1>
+      <p>{{ post.createdAt }}</p>
     </div>
   </div>
-  <p>各位我有一個作戰計畫</p>
-  <img src="" alt=""/>
+  <p>{{ post.content }}</p>
+  <img [src]="post.image" alt=""/>
 </div>

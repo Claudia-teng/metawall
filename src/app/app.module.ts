@@ -1,16 +1,17 @@
+// Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
 // PrimeNG
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 
 // Components
+import { AppComponent } from './app.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { ActionButtonsComponent } from './components/shared/action-buttons/action-buttons.component';
@@ -53,6 +54,7 @@ const PRIME_NG = [
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ...PRIME_NG
   ],
   providers: [],

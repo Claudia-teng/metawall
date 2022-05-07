@@ -3,12 +3,14 @@
 </div>
 <div>
   <textarea #postTextarea 
-            placeholder="What's new?"></textarea>
+            placeholder="What's new?"
+            [(ngModel)]="content"></textarea>
   <button class="upload">
     Upload Image
   </button>
   <img src="" alt=""/>
-  <button class="submit">
+  <button class="submit"
+          (click)="onSubmit()">
     Submit
   </button>
 </div>

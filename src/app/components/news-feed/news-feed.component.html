@@ -1,24 +1,24 @@
 <div class="search-bar">
   <!-- dropdown -->
   <p-dropdown [options]="orderTypes" 
-              [(ngModel)]="selectOrder"
-              optionLabel="label">
+              [(ngModel)]="selectedOrder"
+              optionLabel="label"
+              (ngModelChange)="onSearch()">
   </p-dropdown>
   <!-- input -->
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button>
+    <input type="text" 
+          class="form-control" 
+          placeholder="Search"
+          [(ngModel)]="searchInput">
+    <button (click)="onSearch()">
       <i class="pi pi-search"></i>
     </button>
   </div>
 </div>
 <div>
-  <post></post>
-  <post></post>
-  <post></post>
-  <post></post>
-  <post></post>
-  <post *ngFor="let post of posts">
+  <post *ngFor="let post of posts"
+        [post]="post">
   </post>
   <div *ngIf="posts?.length === 0"
       class="no-posts">
