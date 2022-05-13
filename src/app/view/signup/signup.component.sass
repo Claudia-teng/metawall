@@ -1,28 +1,70 @@
-topbar
-  position: sticky
-  top: 0
-  width: 100%
-.content
-  width: 70%
-  margin: 0 auto
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&family=Paytone+One&display=swap')
+
+div.card-container
+  height: 100%
   display: flex
-  justify-content: space-between
-  padding: 3rem 0rem 1rem 0rem
-.main
+  align-items: center
+  justify-content: center
+  padding: 2rem 0rem
+div.card-signup
+  background-color: var(--white)
+  border-radius: 5px
+  display: flex
   width: 65%
-.action-buttons-area
-  width: 30%
-.mobile-action-buttons-area
-  display: none
+  padding: 5rem 2rem
+div.card-img, div.form-area
+  width: 50%
+div.card-img 
+  display: flex
+  justify-content: center
+  img
+    max-width: 100%
+div.form-area
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  div
+    width: 80%
+  h1
+    font-size: 4rem
+    color: var(--blue)
+    font-family: 'Paytone One', 'monospace'
+  button
+    background-color: var(--blue)
+    color: var(--white)
+    transition: .3s
+    padding: .5rem
+    border: none
+    border-radius: 5px
+    &.loading
+      background-color: var(--light-blue)
+  a
+    color: var(--blue)
+    text-decoration: none
+    cursor: pointer    
+  form p
+    text-align: left
+    font-size: 0.9rem
+  button, input, a
+    display: block
+  p, input, button, a
+    margin: 1rem 0rem
+  input, button, a
+    width: 100%
 
 @media only screen and (max-width: 1080px)
-  .action-buttons-area
-    display: none
-  .main
-    width: 100%
-  .mobile-action-buttons-area
+  div.card-login
     display: unset
-
-@media only screen and (max-width: 414px)
-  .content
     width: 90%
+    padding: 2rem
+  div.card-img
+    width: 90%
+    margin-bottom: 1rem
+  div.form-area  
+    h1
+      font-size: 2rem
+    div
+      width: 90%
+  div.card-img, div.form-area
+    width: 100%

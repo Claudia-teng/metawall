@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 // PrimeNG
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 // Components
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ const SHARED_COMPONENT = [
 
 const PRIME_NG = [
   DropdownModule,
-  ButtonModule
+  ButtonModule,
+  InputTextModule
 ]
 
 @NgModule({

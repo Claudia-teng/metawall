@@ -1,1 +1,39 @@
-<div>Login</div>
+<div class="card-container">
+  <div class="card-login">
+    <div class="card-img">
+      <img src="assets/img.svg"/>
+    </div>
+    <div class="form-area">
+      <div>
+        <h1>MetaWall</h1>
+        <p>Come and meet new friends in metawall!</p>
+        <form>
+          <input pInputText
+                type="email" 
+                placeholder="Email"/>
+          <input pInputText
+                type="password"
+                autocomplete="on"
+                placeholder="Password"/>
+          <p *ngIf="loginFailed"
+              class="text-danger">
+              Wrong Email or Password!
+          </p>
+          <ng-container *ngIf="loading; else loginButton">
+            <button class="loading">
+              <i class="pi pi-spin pi-spinner"></i>
+            </button>
+          </ng-container>
+          <ng-template #loginButton>
+            <button (click)="onLogin()">
+              Login
+            </button>
+          </ng-template>
+        </form>
+        <a routerLink="/signup">
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
