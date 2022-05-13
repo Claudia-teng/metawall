@@ -16,8 +16,8 @@ export class SignupComponent {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-      this.signupFailed = true;
-    //   this.router.navigate(['/pages/news-feed']);
+      // this.signupFailed = true;
+      this.router.navigate(['/pages/news-feed']);
     }, 3000);
   }
 }
