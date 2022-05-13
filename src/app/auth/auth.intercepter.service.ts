@@ -7,7 +7,6 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const Authorization = localStorage.getItem('jwt') || '';
-
     const modifiedRequest = req.clone({
       headers: req.headers
         .set('Authorization', Authorization)

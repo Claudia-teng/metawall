@@ -27,6 +27,13 @@
           <!-- <p class="text-danger">
               Password length must be greater than 8 characters. 
           </p> -->
+          <input pInputText
+                type="password"
+                autocomplete="on"
+                placeholder="Confirm Password"/>
+          <!-- <p class="text-danger">
+              Password and confirm password must be match. 
+          </p> -->
           <p *ngIf="signupFailed"
               class="text-danger">
               Wrong Email or Password!
