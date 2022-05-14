@@ -18,4 +18,11 @@ export class AuthService {
     return this.http.post<User>(`https://metawall-api.herokuapp.com/users/login`, loginUser);
   }
 
+  public isAuthenticated() {
+    const token: string | null = localStorage.getItem('jwt');
+    if (!token) return false;
+    const payload = atob(token.split('.')[1]);
+    const parsedPayload = JSON.parse(payload);
+    return parsedPayload.exp > Date.now() / 1000; // check if token is expired
+  }
 }

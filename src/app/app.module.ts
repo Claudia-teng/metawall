@@ -7,8 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-// Interceptor
+// Auth
 import { AuthInterceptorService } from './auth/auth.intercepter.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
 // PrimeNG
 import { DropdownModule } from 'primeng/dropdown';
@@ -67,6 +68,7 @@ const PRIME_NG = [
     ...PRIME_NG
   ],
   providers: [
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

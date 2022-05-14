@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth-guard.service';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { LoginComponent } from './view/login/login.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'pages', 
-    // todo - add auth guard
+    canActivate: [AuthGuard],
     component: MainComponent,
     children: [
       {

@@ -20,6 +20,14 @@ export class LoginComponent {
               private router: Router) {}
   
   ngOnInit() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/pages/news-feed']);
+    } else {
+      this.buildForm();
+    }
+  }
+
+  private buildForm(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email] ],
       password: ['', Validators.required]

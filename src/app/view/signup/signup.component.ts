@@ -20,13 +20,21 @@ export class SignupComponent {
               private router: Router) {}
 
   ngOnInit() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/pages/news-feed']);
+    } else {
+      this.buildForm();
+    }
+  }    
+  
+  private buildForm(): void {
     this.signupForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email] ],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
-    }, {validators: this.checkPasswords})
-  }            
+    }, {validators: this.checkPasswords});
+  }
 
   public onSignup(): void {
     this.loading = true;
