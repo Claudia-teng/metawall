@@ -7,44 +7,54 @@
       <div>
         <h1>MetaWall</h1>
         <p>Sign Up</p>
-        <form>
+        <form [formGroup] = "signupForm">
           <input pInputText
                 type="text" 
-                placeholder="Name"/>
-          <!-- <p class="text-danger">
-                Name must contain at least two characters.
-          </p> -->
+                placeholder="Name"
+                formControlName="name"/>
+          <p *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.errors"
+              class="text-danger">
+              Name must contain at least two characters.
+          </p>
           <input pInputText
                 type="email" 
-                placeholder="Email"/>
-          <!-- <p class="text-danger">
+                placeholder="Email"
+                formControlName="email"/>
+          <p *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors"
+              class="text-danger">
               Please enter a valid email.
-          </p> -->
+          </p>
           <input pInputText
                 type="password"
                 autocomplete="on"
-                placeholder="Password"/>
-          <!-- <p class="text-danger">
+                placeholder="Password"
+                formControlName="password"/>
+          <p *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors"
+              class="text-danger">
               Password length must be greater than 8 characters. 
-          </p> -->
+          </p>
           <input pInputText
                 type="password"
                 autocomplete="on"
-                placeholder="Confirm Password"/>
-          <!-- <p class="text-danger">
+                placeholder="Confirm Password"
+                formControlName="confirmPassword"/>
+          <p *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.hasError('notSame')"
+              class="text-danger">
               Password and confirm password must be match. 
-          </p> -->
+          </p>
           <p *ngIf="signupFailed"
               class="text-danger">
-              Wrong Email or Password!
+              This email has been signed up.
           </p>
-          <ng-container *ngIf="loading; else loginButton">
+          <ng-container *ngIf="loading; else signupButton">
             <button class="loading">
               <i class="pi pi-spin pi-spinner"></i>
             </button>
           </ng-container>
-          <ng-template #loginButton>
-            <button (click)="onSignup()">
+          <ng-template #signupButton>
+            <button (click)="onSignup()"
+                    [ngClass]="{'disabled': signupForm.status==='INVALID' || confirmError}"
+                    [disabled]="signupForm.status==='INVALID' || confirmError">
               Sign Up
             </button>
           </ng-template>
